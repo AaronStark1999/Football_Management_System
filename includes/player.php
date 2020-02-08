@@ -1,0 +1,21 @@
+<?php
+include "connection.php";
+if(isset($_POST['submit2']))
+{
+	$pid=$_POST["pid"];
+	$pname=$_POST["pname"];
+	$tid=$_POST["tid"];
+	$position=$_POST["position"];
+	$stats=$_POST["stats"];
+	$ranking=$_POST["ranking"];
+	$sql="Insert into player(pid,pname,tid,position,stats,ranking)
+      values ('$pid','$pname','$tid','$position','$stats','$ranking');";
+    $result=mysqli_query($conn,$sql);
+    if($result)
+    {
+	 	header("Location:../new.php");
+
+    }
+}
+
+?>
